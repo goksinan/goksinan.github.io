@@ -4,7 +4,7 @@ permalink: /image-processing/
 title: "Image Processing Projects"
 author_profile: true
 header:
-  image: "/images/camera.jpg"
+  image: "/images/security-camera.jpg"
 ---
 
 {% include group-by-array collection=site.posts field="tags" %}

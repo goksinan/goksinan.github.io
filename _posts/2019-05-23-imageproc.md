@@ -5,11 +5,15 @@ tags: [opencv, python, image]
 header:
   image: "/images/rat-hands-dark.jpg"
 excerpt: "Image Processing, OpenCV"
+#classes: wide
+toc: true
+toc_label: "Table of Contents"
+toc_icon: "cog"
 ---
 
 ## Using an image processing package (OpenCV) to analyze video files
 
-### Summary
+### 1. Summary
 
 Rodents are among the most popular animal models used in research studies. Rats, especially, can be trained to perform a variety of tasks to study motor disabilities, and psychological and cognitive disorders. When analyzing the rat behavior or using it as a dependent parameter, it is often required to use **repetitive** trials in which the rat performs a "similar" task. (A *trial* is defined as the learned task, such as reaching and grasping a food pellet, that is performed by rat over and over again and during which data is collected). Perhaps, the best method of identifying a particular task is to use a 3D tracking system with reflective markers attached to the rat's joints, although such systems can be very expensive. A cheaper and equally effective method might be using a simple USB camera that is strategically placed so that it can capture information from the images.
 
@@ -20,7 +24,7 @@ Figure 1. The behavioral task
 
 ---
 
-### 1. Problem Definition  
+### 2. Problem Definition  
 
 The picture above demonstrates an experimental setup where neural, EMG, and force signals are being recorded simultaneously while the rat is performing a reach-to-pull task. In this task, the rat reaches through a window on its cage and pulls on a metal rod. The recording system automatically saves all the signals along with video images sampled at 30 frames/sec. Our goal is to group trials based on the number of reaches the rat performs, so that we can study each group separately.
 
@@ -40,7 +44,7 @@ We can ***analyze the video recordings*** to figure out how many times rat attem
 
 ---
 
-### 2. Image Processing using OpenCV-Python
+### 3. Image Processing using OpenCV-Python
 
 Here is the basic flowchart that I implemented:
 <br><br>
@@ -77,7 +81,7 @@ Figure 5. Contour idntified
 Figure 6. We are interested in the pixel variations within the RED area
 <br><br>
 
-### The overall process looks like this:
+**The overall process looks like this:**
 
 <video poster="/images/rat_image_proc/fig7_poster.png" id="player" playsinline controls>
    <source src="/videos/rat_image_proc/output110.mp4" type="video/mp4" />

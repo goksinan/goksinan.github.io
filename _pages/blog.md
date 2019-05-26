@@ -1,16 +1,13 @@
 ---
 layout: archive
-permalink: /image-processing/
-title: "Image Processing Projects"
+permalink: /blog/
+title: "Opinions"
 author_profile: true
-#header:
-#  image: "/images/security-camera.jpg"
-#  caption: "Photo credit: [**Pexels**](https://www.pexels.com)"
 ---
 
 {% for cat in site.categories %}
   {% assign cat_name = cat[0] %}
-  {% if cat_name == "image" %}
+  {% if cat_name == "blog" %}
     {% for post in site.categories[cat_name] %}
       {% include archive-single.html %}
     {% endfor %}

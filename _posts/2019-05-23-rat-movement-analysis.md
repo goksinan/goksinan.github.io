@@ -1,14 +1,15 @@
 ---
-title: "Image Processing Project"
+title: "Rat Movement Analysis"
 data: 2019-05-23
 tags: [opencv, python, image]
-header:
-  image: "/images/rat-hands-dark.jpg"
-excerpt: "Image Processing, OpenCV"
+#header:
+#  image: "/images/rat-hands-dark.jpg"
+excerpt: "Python, OpenCV"
 #classes: wide
 toc: true
 toc_label: "Table of Contents"
-toc_icon: "cog"
+toc_icon: "table"
+category: "image"
 ---
 
 ## Using an image processing package (OpenCV) to analyze video files

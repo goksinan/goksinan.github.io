@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Sinan's Personal Website"
+title                    : "Sinan Gok"
 title_separator          : "-"
 name                     : "Sinan Gok"
 description              : "Data Science Portfolio"
@@ -106,7 +106,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Sinan Gok"
+  name             : "Sinan Gok, PhD"
   avatar           : "/images/bio-photo.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Data Science Portfolio"
   location         : "Bloomfield, NJ"

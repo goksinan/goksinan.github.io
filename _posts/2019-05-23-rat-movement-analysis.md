@@ -12,7 +12,7 @@ toc_icon: "table"
 category: "image"
 ---
 
-## Using an image processing package (OpenCV) to analyze video files
+## Using Python (OpenCV) to analyze video files
 
 ### 1. Summary
 
@@ -56,12 +56,29 @@ Figure 2. The flowchart
 
 **Step 1:** Read the frames, convert it to gray scale, and specify the Region of Interest (ROI)
 
+```python
+# Convert from colored to grayscale
+gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+# Define a region of interest for the white plastic tray (landmark)
+roi = np.zeros((480,640), np.uint8)
+roi[240:400, 220:460] = np.ones((160,240), np.uint8) * 255
+```
+
 <img src="/images/rat_image_proc/fig3_gray.png" alt="Grayscale" width="320"/>
 
 Figure 3. ROI is shown as the white rectangle
 <br><br>
 
 **Step 2:** Convert frame to a binary image
+
+```python
+# Convert from grayscale to black-and-white
+_, thresh = cv2.threshold(gray, 125, 255, cv2.THRESH_BINARY)
+
+# Bitwise-AND the mask and the original image
+res = cv2.bitwise_and(thresh, thresh, mask=roi)
+```
 
 <img src="/images/rat_image_proc/fig4_BW.png" alt="Binary image" width="320"/>
 
@@ -70,12 +87,24 @@ Figure 4. Binarized
 
 **Step 3:** Use `cv2.findContours()` to find the desired large white area and mark it
 
+```python
+contours, hier = cv2.findContours(res,cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)
+for cnt in contours:
+    if 5000 < cv2.contourArea(cnt) < 20000:
+        cv2.drawContours(frame, [cnt], 0, (0, 255, 0), 2)
+```
+
 <img src="/images/rat_image_proc/fig5_contour.png" alt="Contour" width="320"/>
 
 Figure 5. Contour idntified
 <br><br>
 
 **Step 4:** Finally, choose a window of interest to follow rat's paw movements
+
+```python
+# x1, y1, x2, and y2 coordinates are defined based on the contour
+img = cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 255), 3)
+```
 
 <img src="/images/rat_image_proc/fig6_roi.png" alt="Roi" width="320"/>
 
@@ -90,3 +119,53 @@ Figure 6. We are interested in the pixel variations within the RED area
 </video>
 
 ---
+
+### 4. Testing the Algorithm
+
+I tested the algorithm on two sessions of recordings, each having about 100 trials. The confusion matrices and kappa statistics are given below. The group numbers represent the number of reaches with or without a successful pull. Actual number of reaches were determined by a human observer.
+
+1: One reach, 2: Two reaches, 3: Three reaches, 4: Four reaches
+
+**RESULTS**
+
+
+	SESSION 1:
+
+		   		Predicted group
+			      1	  2   3   4  | Tot.			
+			  -------------------------
+			  1 | 20  2   1	  0  | 23		-Accuracy = 90%
+		 Actual	  2 | 1	  41  3   1  | 46		-Cohen's kappa = 0.8341
+	 	 Group	  3 | 0   1   16  0  | 17		-Substantial agreement between groups
+			  4 | 0   0   0   1  | 1
+			  -------------------------
+			Tot.| 21  44  20  2  | 87
+
+
+	SESSION 2:
+
+		   		Predicted group
+			      1	  2   3   4  | Tot.			
+			  -------------------------
+			  1 | 34  3   0	  0  | 37		-Accuracy = 85%
+		 Actual	  2 | 5	  49  2   0  | 56		-Cohen's kappa = 0.7440
+	 	 Group	  3 | 1   4   8   0  | 13		-Substantial agreement between groups
+			  4 | 0   0   1   0  | 1
+			  -------------------------
+			Tot.| 40  56  11  0  | 107
+
+
+### 5. Conclusion
+By analyzing video images, I segregated rat's reaching movements into different
+groups with significant accuracy. There were two major limitations in the method
+I used:
+
+  1. Paw detection is susceptible to changes in the background. The background
+  must be dark and static in order for this method to work efficiently. A better
+  approach would be placing the camera from a bird-view angle so that rat's
+  body would not intervene with the ROI window.
+  2. The current method requires a pre-defined region to focus (the ROI) which
+  requires user adjustments based on camera angle. An optimal approach should
+  automatically decide an ROI without requiring the user's involvement.
+
+### 6. Demo

@@ -108,9 +108,9 @@ It is different, and it is overestimated. Why? You can look [here](https://stack
 
 Now, we are going to look at the same data from a different perspective.
 
-I am going to use the same __dist__ and __speed__ variables, but in a hypothetical setting. Let’s assume that I have bunch of other drivers and attributes of those drivers. I trained a model that takes driver attributes as inputs and produces the time that driver spent in traffic as the output. I tested my model on a test set (50 cars) and recorded the predicted output ($$y_hat$$). I already know the actual output ($$y$$). Now, I want to evaluate the performance of my model. Let's assume that $$y$$ is identical to __dist__ and $$y_hat$$ is identical to __speed__.
+I am going to use the same __dist__ and __speed__ variables, but in a hypothetical setting. Let’s assume that I have bunch of other drivers and attributes of those drivers. I trained a model that takes driver attributes as inputs and produces the time that driver spent in traffic as the output. I tested my model on a test set (50 cars) and recorded the predicted output ($$y\_hat$$). I already know the actual output ($$y$$). Now, I want to evaluate the performance of my model. Let's assume that $$y$$ is identical to __dist__ and $$y\_hat$$ is identical to __speed__.
 
-In other words, I have an actual signal and a predicted signal which happen to have the same values as __dist__ and __speed__, respectively. But, we will pretend that they both have the same unit (e.g. minute):
+In other words, I have an actual signal and a predicted signal which happen to have the same values as __dist__ and __speed__, respectively. But, we will pretend that they both have the same unit (e.g. seconds):
 
 ```r
 y <- dist
@@ -139,8 +139,8 @@ And the $$R^2$$ is:
 y_bar = mean(y)
 RSS = sum((y-y_hat)^2)
 TSS = sum((y-y_bar)^2)
-R2 = 1 - RSS/TSS
-cat("Coefficient of determination= ", R2)
+Rsquared = 1 - RSS/TSS
+cat("Coefficient of determination= ", Rsquared)
 ## Coefficient of determination=  -0.8798069
 ```
 
@@ -151,7 +151,7 @@ As these two signals become more separated, the $$R^2$$ value will decrease whil
 Figure 4. The $$r$$ and $$R^2$$ as a function of mean difference
 <br><br>
 
-$$R^2$$ gives us a measure on how much of the variation in the actual variable $$y$$ can be explained by the predicted variable $$y_hat$$. By switching their roles, we change the $$RSS/TSS$$ term, thus we obtain a different $$R^2$$ value.
+$$R^2$$ gives us a measure on how much of the variation in the actual variable $$y$$ can be explained by the predicted variable $$y\_hat$$. By switching their roles, we change the $$RSS/TSS$$ term, thus we obtain a different $$R^2$$ value.
 
 ```r
 y <- speed
@@ -159,8 +159,8 @@ y_hat <- dist
 y_bar = mean(y)
 RSS = sum((y-y_hat)^2)
 TSS = sum((y-y_bar)^2)
-R2 = 1 - RSS/TSS
-cat("Coefficient of determination= ", R2)
+Rsquared = 1 - RSS/TSS
+cat("Coefficient of determination= ", Rsquared)
 ## Coefficient of determination=  -43.64745
 ```
 

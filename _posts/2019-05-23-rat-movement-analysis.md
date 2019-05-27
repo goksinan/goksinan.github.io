@@ -136,7 +136,7 @@ I tested the algorithm on two sessions of recordings, each having about 100 tria
 			  -------------------------
 			  1 | 20  2   1	  0  | 23		-Accuracy = 90%
 		 Actual	  2 | 1	  41  3   1  | 46		-Cohen's kappa = 0.8341
-	 	 Group	  3 | 0   1   16  0  | 17		-Substantial agreement between groups
+	 	 Group	  3 | 0   1   16  0  | 17		-Near perfect agreement between groups
 			  4 | 0   0   0   1  | 1
 			  -------------------------
 			Tot.| 21  44  20  2  | 87

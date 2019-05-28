@@ -29,12 +29,6 @@ Figure 1. The behavioral task
 
 The picture above demonstrates an experimental setup where neural, EMG, and force signals are being recorded simultaneously while the rat is performing a reach-to-pull task. In this task, the rat reaches through a window on its cage and pulls on a metal rod. The recording system automatically saves all the signals along with video images sampled at 30 frames/sec. Our goal is to group trials based on the number of reaches the rat performs, so that we can study each group separately.
 
-**Some important points to consider:**
-
-* Rat can make ***single*** or ***multiple*** attempts until a successful pulling outcome
-* Rat can ***reach multiple times*** before touching the rod for the first time
-* Rat can rest its paw on the window before attempting to pull
-
 **What about using a force sensor?**
 
 Using a force sensor is probably the first and simplest solution we can think of. However, there it has a big drawback. We can detect reaches only if the animal makes contact with the rod. All other reaches would go unnoticed. We need a better approach where we can detect the reaches regardless of the final outcome (pulling vs. not pulling).
@@ -122,7 +116,7 @@ Figure 6. We are interested in the pixel variations within the RED area
 
 ### 4. Testing the Algorithm
 
-I tested the algorithm on two sessions of recordings, each having about 100 trials. The confusion matrices and kappa statistics are given below. The group numbers represent the number of reaches with or without a successful pull. Actual number of reaches were determined by a human observer.
+I tested the algorithm on two sessions of recordings, each having about 100 trials. The confusion matrices and kappa statistics are given below. The group numbers represent the number of reaches with or without a successful pull. Actual numbers of reaches were determined by a human observer.
 
 1: One reach, 2: Two reaches, 3: Three reaches, 4: Four reaches
 
@@ -169,3 +163,23 @@ I used:
   automatically decide an ROI without requiring the user's involvement.
 
 ### 6. Demo
+
+Instructions for using the demo folder in a Python IDE (E.g. VS Code)
+
+1. Download the files
+```
+$ git clone https://github.com/goksinan/rat_video_demo.git
+```
+2. Go to rat_video_demo directory and create a new virtual environment
+```
+$ python3 -m venv venv
+$ source venv/bin/activate
+```
+3. Install the required packages
+```
+$ pip install -r requirements.txt
+```
+4. Run the .py file
+```
+$ python3 run.py
+```

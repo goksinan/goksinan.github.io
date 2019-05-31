@@ -5,7 +5,7 @@ tags: [opencv, python, image]
 #header:
 #  image: "/images/rat-hands-dark.jpg"
 excerpt: "Python, OpenCV"
-#classes: wide
+classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "table"
@@ -14,7 +14,16 @@ category: "image"
 
 ## Using Python (OpenCV) to analyze video files
 
-### 1. Summary
+### 1. Excerpt
+
+I have collected video recordings from a rat that was performing multiple trials of reach-and-pull activities. My goal in this project is to classify these activities based on the number of reaches rat performed in each trial. The overall procedure looks like this:
+
+<video poster="/images/rat_image_proc/fig7_poster.png" id="player" playsinline controls>
+   <source src="/videos/rat_image_proc/output110.mp4" type="video/mp4" />
+   <source src="/videos/rat_image_proc/output110.webm" type="video/webm" />
+</video>
+
+### 2. Introduction
 
 Rodents are among the most popular animal models used in research studies. Rats, especially, can be trained to perform a variety of tasks to study motor disabilities, and psychological and cognitive disorders. When analyzing the rat behavior or using it as a dependent parameter, it is often required to use **repetitive** trials in which the rat performs a "similar" task. (A *trial* is defined as the learned task, such as reaching and grasping a food pellet, that is performed by rat over and over again and during which data is collected). Perhaps, the best method of identifying a particular task is to use a 3D tracking system with reflective markers attached to the rat's joints, although such systems can be very expensive. A cheaper and equally effective method might be using a simple USB camera that is strategically placed so that it can capture information from the images.
 
@@ -25,7 +34,7 @@ Figure 1. The behavioral task
 
 ---
 
-### 2. Problem Definition  
+### 3. Problem Definition  
 
 The picture above demonstrates an experimental setup where neural, EMG, and force signals are being recorded simultaneously while the rat is performing a reach-to-pull task. In this task, the rat reaches through a window on its cage and pulls on a metal rod. The recording system automatically saves all the signals along with video images sampled at 30 frames/sec. Our goal is to group trials based on the number of reaches the rat performs, so that we can study each group separately.
 
@@ -39,7 +48,7 @@ We can ***analyze the video recordings*** to figure out how many times rat attem
 
 ---
 
-### 3. Image Processing using OpenCV-Python
+### 4. Image Processing using OpenCV-Python
 
 Here is the basic flowchart that I implemented:
 <br><br>
@@ -105,7 +114,7 @@ img = cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 255), 3)
 Figure 6. We are interested in the pixel variations within the RED area
 <br><br>
 
-**The overall process looks like this:**
+**Let's look at the overall procedure one more time:**
 
 <video poster="/images/rat_image_proc/fig7_poster.png" id="player" playsinline controls>
    <source src="/videos/rat_image_proc/output110.mp4" type="video/mp4" />
@@ -114,7 +123,7 @@ Figure 6. We are interested in the pixel variations within the RED area
 
 ---
 
-### 4. Testing the Algorithm
+### 5. Testing the Algorithm
 
 I tested the algorithm on two sessions of recordings, each having about 100 trials. The confusion matrices and kappa statistics are given below. The group numbers represent the number of reaches with or without a successful pull. Actual numbers of reaches were determined by a human observer.
 
@@ -149,7 +158,7 @@ I tested the algorithm on two sessions of recordings, each having about 100 tria
 			Tot.| 40  56  11  0  | 107
 
 
-### 5. Conclusion
+### 6. Conclusion
 By analyzing video images, I segregated rat's reaching movements into different
 groups with significant accuracy. There were two major limitations in the method
 I used:
@@ -162,7 +171,7 @@ I used:
   requires user adjustments based on camera angle. An optimal approach should
   automatically decide an ROI without requiring the user's involvement.
 
-### 6. Demo
+### 7. Demo
 
 Instructions for using the demo folder in a Python IDE (E.g. VS Code)
 

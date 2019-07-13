@@ -9,7 +9,7 @@ classes: wide
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "table"
-category: "image"
+category: "signal"
 ---
 
 ## Using Python (OpenCV) to analyze video files

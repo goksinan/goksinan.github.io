@@ -2,7 +2,7 @@
 title: "Comparison of Two Similarity Metrics"
 data: 2019-05-23
 tags: [R, similarity]
-excerpt: "R, Correlation"
+excerpt: "Correlation Coefficient and Coefficient of Determination"
 category: "blog"
 mathjax: "true"
 ---

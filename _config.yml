@@ -133,6 +133,10 @@ author:
     - label: "Linkedin"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/sinangok/"
+    - label: "Research"
+      icon: "fab fa-fw fa-researchgate"
+      url: "https://www.researchgate.net/profile/Sinan_Gok"
+
 
 # Site Footer
 footer:

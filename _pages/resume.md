@@ -3,6 +3,7 @@ title: Resume
 layout: archive
 permalink: /resume/
 author_profile: true
+classes: wide
 ---
 
 ----
@@ -35,6 +36,10 @@ Education
 
 2009-2011
 :   **MS, Electrical Engineering**; Lehigh University (Bethlehem, PA)
+<br/><br/>
+
+2001-2006
+:   **BS, Electrical and Communications Engineering**; Kocaeli University (Turkey)
 
 ---
 

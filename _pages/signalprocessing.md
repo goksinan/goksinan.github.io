@@ -1,7 +1,7 @@
 ---
 layout: archive
-permalink: /image-processing/
-title: "Image Processing Projects"
+permalink: /signal-processing/
+title: "Signal Processing Projects"
 author_profile: true
 #header:
 #  image: "/images/security-camera.jpg"
@@ -10,7 +10,7 @@ author_profile: true
 
 {% for cat in site.categories %}
   {% assign cat_name = cat[0] %}
-  {% if cat_name == "image" %}
+  {% if cat_name == "signal" %}
     {% for post in site.categories[cat_name] %}
       {% include archive-single.html %}
     {% endfor %}

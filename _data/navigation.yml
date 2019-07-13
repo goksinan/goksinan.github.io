@@ -2,8 +2,8 @@
 main:
   - title: "About"
     url: /about/
-  - title: "Image Processing"
-    url: /image-processing/
+  - title: "Signal Processing"
+    url: /signal-processing/
   - title: "Machine Learning"
     url: /machine-learning/
   - title: "Blog"

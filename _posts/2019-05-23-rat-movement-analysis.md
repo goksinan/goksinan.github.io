@@ -1,6 +1,6 @@
 ---
 title: "Rat Movement Analysis"
-data: 2019-05-23
+date: 2019-05-23
 tags: [opencv, python, image]
 #header:
 #  image: "/images/rat-hands-dark.jpg"

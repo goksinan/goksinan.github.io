@@ -1,6 +1,6 @@
 ---
 title: "Creating a Virtual Environment"
-data: 2019-05-23
+date: 2019-05-23
 tags: [Virtual environment, pip]
 excerpt: "Creating a virtual environment and adding packages to eat"
 category: "blog"
@@ -11,7 +11,7 @@ classes: wide
 
 ---
 
-### Create a virtual environment called ***env0*** using `venv` package
+### Create a virtual environment called ***venv*** using `venv` package
 ```python
 python3 -m venv venv
 ```

@@ -1,6 +1,6 @@
 ---
 title: "Big Mart Sales Prediction"
-data: 2019-05-23
+date: 2018-01-01
 tags: [machine-learning, python, deep-learning]
 excerpt: "Python, Deep Learning"
 category: "machine"

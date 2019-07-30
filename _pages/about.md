@@ -1,7 +1,7 @@
 ---
 title: "About"
 permalink: /about/
-excerpt: "Aspiring data scientist who has experience in machine learning, data analysis, and data visualization. Uses this platform to share thoughts and projects and interact with the data science community."
+excerpt: "Data scientist with experience in machine learning, data analysis, and data visualization. Ready the tackle challenges in an increasingly data driven world. Uses this platform to share thoughts and projects and interact with the data science community."
 header:
   overlay_color: "#333"
   actions:
@@ -13,6 +13,8 @@ header:
 ---
 Bio:
 
-I have over 6 years of experience developing neural interfaces for neuroprosthetic applications. For my PhD research, I built an automated data and video acquisition system to collect electrophysiological signals from freely moving rats. I used predictive models to analyze the relationship between the signals descending from the brain and the forelimb muscle activities. Currently, I am helping our team to develop a custom-made recording and stimulation implant for transcranial electrical stimulation (tES) on rats. One of my responsibilities is to apply machine learning techniques to our data to gain insights into the effects of tES on cerebellum activity.
+Research engineer with over 6 years of experience in data collection and analysis. Experience in the stages of data lifecycle (acquisition, storage, wrangling, analysis, and publishing). In-depth knowledge of digital signal processing, machine learning and predictive modeling, and exposure to statistical analysis techniques.
 
-Highlighted skills: ability to gather and interpret information, learn quickly, analyze data, manage a project, communicate with peers, present ideas, and think in an innovative and creative manner.
+Ability to gather and interpret information, learn quickly, make sense of data, manage a project, communicate with peers, present ideas, and think in an innovative and creative manner.
+
+MATLAB, Labview, Python, Numpy, Scipy, Matplotlib, Plotly, Bokeh, Scikit-learn, Scikit-image, OpenCV, R, Git, GitHub, GitHub Pages, SQL.

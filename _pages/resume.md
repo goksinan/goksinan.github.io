@@ -17,10 +17,10 @@ Key Skills
 ----------
 
 * Over 6 years of experience developing medical instrumentation tools and techniques to collect real-time electrophysiological data ([NPL Lab](https://web.njit.edu/~sahin/)).
-* In-depth knowledge of brain-computer interfaces, neural control of movement, and mechanisms of neuromodulation.
-* Experience in biomedical signal processing, machine learning and predictive modelling, and exposure to statistical analysis techniques.
+* Experience in advanced biomedical signal processing, machine learning and predictive modelling.
+* Hands-on experience in statistical analysis techniques.
 * Ability to gather and interpret information, learn quickly, analyze data, manage a project, communicate with peers, present ideas, and think in an innovative and creative manner.
-* MATLAB, LabVIEW, Python, R, PTC Pro Engineer, Git/GitHub, Jekyll.
+* MATLAB, Labview, Python, Numpy, Scipy, Matplotlib, Plotly, Bokeh, Scikit-learn, Scikit-image, OpenCV, R, Git, GitHub, GitHub Pages, SQL.
 
 ---
 
@@ -127,4 +127,4 @@ Professional Development
 
 ----
 
-> Sinan Gok • Bloomfield, NJ, USA
+> Sinan Gok • Tappan, NY, USA

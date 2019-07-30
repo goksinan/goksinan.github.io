@@ -1,6 +1,6 @@
 ---
 title: "Data Science Q&A"
-data: 2019-05-23
+date: 2019-05-23
 tags: [Interview, Questions]
 excerpt: "Answers to some common Data Science questions"
 category: "blog"

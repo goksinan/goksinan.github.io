@@ -1,9 +1,16 @@
 ---
 layout: archive
 permalink: /blog/
-title: "Opinions"
+title: "Blog Posts"
 author_profile: true
+classes: wide
 ---
+----
+
+>  "In God, we trust. All others must bring data."
+>   W. Edwards Deming
+
+----
 
 {% for cat in site.categories %}
   {% assign cat_name = cat[0] %}

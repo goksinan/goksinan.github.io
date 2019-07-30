@@ -7,9 +7,35 @@ category: "blog"
 mathjax: "true"
 ---
 
-**Q1. What are the "components of learning" in Machine Learning?**
+1. [What are the "components of learning" in Machine Learning?](#q1)
+2. [What is bias-variance tradeoff?](#q2)
+3. [How is KNN different than k-means clustering?](#q3)
+4. [What are ROC and AUC?](#q4)
+5. [What is a cost function?](#q5)
+6. [What is gradient descent?](#q6)
+7. [Why feature scaling is important before applying a learning algorithm?](#q7)
+8. [What is Linear Regression?](#q8)
+9. [What is Polynomial Regression?](#q9)
+10. [What is Logistic Regression?](#q10)
+11. [Can Logistic Regression be used for multiclass classification?](#q11)
+12. [What is overfitting? How can you avoid it?](#q12)
+13. [What is Regularization?](#q13)
+14. [Why is Bayes’ Rule is useful in spam filtering?](#q14)
+15. [Does getting more training data always improve the performance of the model?](#q15)
+16. [How do you approach a machine learning problem?](#q16)
+17. [What type of error metrics do you use to evaluate imbalanced classifications?](#q17)
+18. [What is SVM and how does it work?](#q18)
+19. [How does k-means clustering algorithm work?](#q19)
+20. [What is the “ceiling analysis” and why is it important?](#q20)
+21. [What are the different types of testing?](#q21)
 
-**A1.** Consider the following diagram: (source: [caltech](https://www.youtube.com/watch?v=mbyG85GZ0PI&list=PLD63A284B7615313A&index=1))
+---
+
+
+
+## <a name="q1"></a> Q1. What are the "components of learning" in Machine Learning?
+
+Consider the following diagram: (source: [caltech](https://www.youtube.com/watch?v=mbyG85GZ0PI&list=PLD63A284B7615313A&index=1))
 
 <img src="/images/data-science-questions/learning-problem.png" alt="learning problem" width="500"/>
 <br>
@@ -27,31 +53,32 @@ mathjax: "true"
    **Hypothesis set:** Neural Networks -> **Learning algorithm:** Back propagation
 
 
-**Q2. What is bias-variance tradeoff?**
 
-**A2.** What do we mean by the variance and bias of a statistical learning method? Variance refers to the amount by which $$\hat{f}$$ (function that defines the model) would change if we estimated it using a different training data set. Since the training data are used to fit the statistical learning method, different training data sets will result in a different $$\hat{f}$$. But ideally the estimate for $${f}$$ should not vary too much between training sets. However, if a method has high variance then small changes in the training data can result in large changes in $$\hat{f}$$. In general, more flexible statistical methods have higher variance.
+### <a name="q2"></a> Q2. What is bias-variance tradeoff?
+
+What do we mean by the variance and bias of a statistical learning method? Variance refers to the amount by which $$\hat{f}$$ (function that defines the model) would change if we estimated it using a different training data set. Since the training data are used to fit the statistical learning method, different training data sets will result in a different $$\hat{f}$$. But ideally the estimate for $${f}$$ should not vary too much between training sets. However, if a method has high variance then small changes in the training data can result in large changes in $$\hat{f}$$. In general, more flexible statistical methods have higher variance.
 
 On the other hand, bias refers to the error that is introduced by approximating a real-life problem, which may be extremely complicated, by a much simpler model. For example, linear regression assumes that there is a linear relationship between Y and X1, X2,...,Xp. It is unlikely that any real-life problem truly has such a simple linear relationship, and so performing linear regression will undoubtedly result in some bias in the estimate of $${f}$$.
 
----
 
-**Q3. How is KNN different than k-means clustering?**
 
-**A3.** KNN is a supervised classification algorithm which requires labeled output to work. *K* refers the number of neighbors of a point. We look at these point to decide which class the point belongs to. If *K* is small, it means that our different classes have sharp boundaries and resulting model is probably overfitted. If *K* is big, the boundaries are smoother and the model is probably more generalizable.
+## <a name="q3"></a> Q3. How is KNN different than k-means clustering?
+
+KNN is a supervised classification algorithm which requires labeled output to work. *K* refers the number of neighbors of a point. We look at these point to decide which class the point belongs to. If *K* is small, it means that our different classes have sharp boundaries and resulting model is probably overfitted. If *K* is big, the boundaries are smoother and the model is probably more generalizable.
 
 K-means, on the other hand, refers to an unsupervised learning algorithm. It doesn’t require labelled outputs. What we need is the number of clusters that we want the points fall into, and a distance measure. The algorithm gradually finds cluster centers and a number of points around them. And concludes that these points belong to the same cluster.
 
----
 
-**Q4. What are ROC and AUC?**
 
-**A4.** In a classification problem, the confusion matrix represents the performance of the classification algorithm. Ideally, we would like to have less misclassifications. However, depending on the decision threshold we use, the correct classifications may differ from one class to other. The ROC (receiver operating characteristic) curve is a visual representation of all the confusion matrices we have for various thresholds (for binary classifications). It helps us to decide the best threshold for our problem. The AUC (area under the curve) summarizes the ROC curve with a single value. Usually, the higher the AUC the better.
+## <a name="q4"></a> Q4. What are ROC and AUC?
 
----
+In a classification problem, the confusion matrix represents the performance of the classification algorithm. Ideally, we would like to have less misclassifications. However, depending on the decision threshold we use, the correct classifications may differ from one class to other. The ROC (receiver operating characteristic) curve is a visual representation of all the confusion matrices we have for various thresholds (for binary classifications). It helps us to decide the best threshold for our problem. The AUC (area under the curve) summarizes the ROC curve with a single value. Usually, the higher the AUC the better.
 
-**Q5. What is a cost function?**
 
-**A5.** Examine the following picture (credit to Andrew Ng at Coursera):
+
+## <a name="q5"></a> Q5. What is a cost function?
+
+Examine the following picture (credit to Andrew Ng at Coursera):
 
 <img src="/images/data-science-questions/learning.png" alt="learning" width="400"/>
 <br>
@@ -70,11 +97,11 @@ The above $$J$$ is called an *objective function* or *cost function*, and can be
 
 This is sometimes called "Squared difference cost function" and it is the most commonly used cost function in regression problems.
 
----
 
-**Q6. What is gradient descent?**
 
-**A6.** Gradient Descent is an algorithm that is used to minimize a function. For example, $$J(Q_0, Q_1)$$ can be minimized over $$Q_0$$ and $$Q_1$$. Having 2 parameters, we will end up with a 3D surface function where x-axis is $$Q_0$$, y-axis is $$Q_1$$, and the z-axis is the output of the function.
+## <a name="q6"></a> Q6. What is gradient descent?
+
+Gradient Descent is an algorithm that is used to minimize a function. For example, $$J(Q_0, Q_1)$$ can be minimized over $$Q_0$$ and $$Q_1$$. Having 2 parameters, we will end up with a 3D surface function where x-axis is $$Q_0$$, y-axis is $$Q_1$$, and the z-axis is the output of the function.
 
 <img src="/images/data-science-questions/gradient-descent.png" alt="GD"/>
 <br>
@@ -93,17 +120,17 @@ $$Q = (X^{T}X)^{-1}X^{T}y$$
 
 Since **normal equation** method involves inverting matrices, if the number of features too large Gradient Descent would be the better choice.
 
----
 
-**Q7. Why feature scaling is important before applying a learning algorithm?**
 
-**A7.** If there is a large difference between the ranges of the features, the Gradient Descent algorithm can take a long time to converge. There would be unnecessary oscillations due to highly skewed values. So, feature scaling is needed for the Gradient Descent to efficiently work.
+## <a name="q7"></a> Q7. Why feature scaling is important before applying a learning algorithm?
 
----
+If there is a large difference between the ranges of the features, the Gradient Descent algorithm can take a long time to converge. There would be unnecessary oscillations due to highly skewed values. So, feature scaling is needed for the Gradient Descent to efficiently work.
 
-**Q8. What is Linear Regression?**
 
-**A8.** Linear regression is an analytical technique used to model the relationship between several input variables and a continuous output variable. The key point is that we assume that the relationship is linear. This is a safe assumption because in the worst case, a linear relationship can be achieved by transforming the variables. Linear regression generates a probabilistic model, where some randomness always exists. Consider the following equation:
+
+## <a name="q8"></a> Q8. What is Linear Regression?
+
+Linear regression is an analytical technique used to model the relationship between several input variables and a continuous output variable. The key point is that we assume that the relationship is linear. This is a safe assumption because in the worst case, a linear relationship can be achieved by transforming the variables. Linear regression generates a probabilistic model, where some randomness always exists. Consider the following equation:
 
 $$ income = \beta_0 + \beta_1{age} + \beta_2{education} + \epsilon $$
 
@@ -111,17 +138,17 @@ The model represents the relationship between the *income* (output) and *age* an
 
 $$ \sum_{i=1}^n [y_i -(\beta_0 + \beta_ix_i)]^2 $$
 
----
 
-**Q9. What is Polynomial Regression?**
 
-**A9.** If fitting a straight line to data is not applicable, maybe a more flexible line would work better. Polynomial regression provides this flexibility. It is similar to linear regression except that the cost model includes higher order versions of the features.
+## <a name="q9"></a> Q9. What is Polynomial Regression?
 
----
+If fitting a straight line to data is not applicable, maybe a more flexible line would work better. Polynomial regression provides this flexibility. It is similar to linear regression except that the cost model includes higher order versions of the features.
 
-**Q10. What is Logistic Regression?**
 
-**A10.** Logistic Regression is used to solve classification problems and it is widely used by ML community. It is an extension of the Linear Regression method where the objective is fitting a linear line to a set of data points. However, using Linear Regression for a classification problem has many disadvantages. Thus, Logistic Regression has been developed as a remedy. The most obvious difference is that Logistic Regression forces the output to be somewhere between 0 and 1.
+
+## <a name="q10"></a> Q10. What is Logistic Regression?
+
+Logistic Regression is used to solve classification problems and it is widely used by ML community. It is an extension of the Linear Regression method where the objective is fitting a linear line to a set of data points. However, using Linear Regression for a classification problem has many disadvantages. Thus, Logistic Regression has been developed as a remedy. The most obvious difference is that Logistic Regression forces the output to be somewhere between 0 and 1.
 
 Logistic regression:   $$ 0 \leq h_Q(x) \leq 1 $$
 
@@ -136,17 +163,17 @@ $$ \phi(h_Q(x)) = \frac{1}{1+e^{-h_Q(x)}} $$
 
 Logistic regression gives us the probability of $$h_Q(x)$$ being either 1 or 0. Assume that we pick the threshold as 0.5. If the hypothesis is less than 0, logistic function leads to 0. If the hypothesis is larger than 0, the logistic function generates a 1.
 
----
 
-**Q11. Can Logistic Regression be used for multiclass classification?**
 
-**A11.** Yes. Using the idea of *one-vs-all*, we can use standard Logistic regression to perform multiclass classification. One-vs-all treats a class as the positive class while treating all the others as negative. And repeats this for each of $$k$$ classes and ends up with $$k$$ number of classifiers.
+## <a name="q11"></a> Q11. Can Logistic Regression be used for multiclass classification?
 
----
+Yes. Using the idea of *one-vs-all*, we can use standard Logistic regression to perform multiclass classification. One-vs-all treats a class as the positive class while treating all the others as negative. And repeats this for each of $$k$$ classes and ends up with $$k$$ number of classifiers.
 
-**Q12. What is overfitting? How can you avoid it?**
 
-**A12.** **High bias:** Our opinion about the model is biased, e.g. we think that there is a linear relationship underlying the model, thus we use a simple linear regression model. However, the real relationship is more complex, and we underfit the curve.
+
+## <a name="q12"></a> Q12. What is overfitting? How can you avoid it?
+
+**High bias:** Our opinion about the model is biased, e.g. we think that there is a linear relationship underlying the model, thus we use a simple linear regression model. However, the real relationship is more complex, and we underfit the curve.
 
 **High variance:** We pick a complex model to fit to the training set. We do a good job but if the underlying mechanism has a lot of variance, it means that our model would not be able to capture all and it would not do a good job on a different set of data. In other words, it will overfit to the training set, but it won't generalize.
 
@@ -159,11 +186,11 @@ There are two main ways to avoid overfitting:
 2. Regularization
   - Keep all the features, but reduce the influence of some parameters
 
----
 
-**Q13. What is Regularization?**
 
-**A13.** Most of the time, in order to decrease the variance and increase model’s generalizability we want to reduce the number of features. One method is keeping all the featues in the model while decreasing their weights by shrinking them towards zero. Sometimes they are shrunken down to exactly zero. This is called regularization. Regularization plays an important role in high-dimensional datasets. We basically penalize the loss function by adding an extra term. This extra term depends on the feature weights, the higher the weights the more we penalize the loss function. Remember the cost function for linear regression. Here is the version with added *regularization term:*
+## <a name="q13"></a> Q13. What is Regularization?
+
+Most of the time, in order to decrease the variance and increase model’s generalizability we want to reduce the number of features. One method is keeping all the featues in the model while decreasing their weights by shrinking them towards zero. Sometimes they are shrunken down to exactly zero. This is called regularization. Regularization plays an important role in high-dimensional datasets. We basically penalize the loss function by adding an extra term. This extra term depends on the feature weights, the higher the weights the more we penalize the loss function. Remember the cost function for linear regression. Here is the version with added *regularization term:*
 
 $${J(Q)} = \frac{1}{2m} \sum_{i=1}^m (h_{Q}(x^{(i)}) - y^{(i)})^2 + \lambda\sum_{i=1}^n Q_j^2$$
 
@@ -175,11 +202,11 @@ $$\lambda$$ is called the *regularization parameter*
 
 *Elastic net regression:* In order to get the best of both worlds, this method linearly combines L1 and L2 penalties of the lasso and ridge methods.
 
----
 
-**Q14. Why is Bayes' Rule is useful in spam filtering?**
 
-**A14.** It is estimated that 60% of the emails in the world are spam. Email clients run a program in the background to classify a new email as spam or safe. One popular method is to use the words that appear in the email content to detect if it is spam or not. I mathematical terms, we are interested in the *probability of en email being spam given the words inside:*
+## <a name="q14"></a> Q14. Why is Bayes' Rule is useful in spam filtering?
+
+It is estimated that 60% of the emails in the world are spam. Email clients run a program in the background to classify a new email as spam or safe. One popular method is to use the words that appear in the email content to detect if it is spam or not. I mathematical terms, we are interested in the *probability of en email being spam given the words inside:*
 
 $$P(spam|words)$$
 
@@ -193,11 +220,11 @@ $$P(words)$$: How often this word combination is used regardless of spam.
 
 The classification algorithm used here is called Naive Bayes Classification. The "naive" part comes from the classifier's assumption that features are independent; knowing one feature doesn't tell us anything about the other features. This is a naive assumption because in reality, most of the time the features are dependent.
 
----
 
-**Q15. Does getting more training data always improve the performance of the model?**
 
-**A15.** If you have few data points, the model will be trained easily since there is less points to be fitted. As the training data increase, fitting those data points will get progressively harder. On the other hand, the more training data you have the better chance there is for your model to generalize. There are two extremes that you have to consider:
+## <a name="q15"></a> Q15. Does getting more training data always improve the performance of the model?
+
+If you have few data points, the model will be trained easily since there is less points to be fitted. As the training data increase, fitting those data points will get progressively harder. On the other hand, the more training data you have the better chance there is for your model to generalize. There are two extremes that you have to consider:
 
   1) **High bias (simple model, underfitting)**
 
@@ -215,9 +242,9 @@ If a learning algorithm is suffering from high variance, getting more training d
 
 ---
 
-**Q16. How do you approach a machine learning problem?**
+## <a name="q16"></a> Q16. How do you approach a machine learning problem?
 
-**A16.** Rather than relying on your gut feeling and randomly trying different methods to optimize your learning algorithm, you can take the following steps to make informed decisions:
+Rather than relying on your gut feeling and randomly trying different methods to optimize your learning algorithm, you can take the following steps to make informed decisions:
 
 1. Start with a simple model. Use training, validation, and test sets to evaluate your model. Slowly build up your model to a more complex version.
 
@@ -225,11 +252,11 @@ If a learning algorithm is suffering from high variance, getting more training d
 
 3. Perform ***error analysis.*** Manually examine the samples your model got wrong. See if there is any pattern to it. Think what type of features is causing the confusion and which ones are helping. Try to add new features that might have caught those errors.
 
----
 
-**Q17. What type of error metrics do you use to evaluate imbalanced classifications?**
 
-**A17.** We can use *precision* and *recall*. We want them to be close to 1 for high performance classifiers.
+## <a name="q17"></a> Q17. What type of error metrics do you use to evaluate imbalanced classifications?
+
+We can use *precision* and *recall*. We want them to be close to 1 for high performance classifiers.
 
 <img src="/images/data-science-questions/precision-recall.png" alt="precision-recall"/>
 <br>
@@ -259,11 +286,11 @@ $$F1 = 2*\frac{0.8*0.5}{0.8+0.5} = 0.6$$
 
 This number should be close to 1 for us to conclude that this is a good classifier. As you can see, 0.6 is not good enough.
 
----
 
-**Q18. What is SVM and how does it work?**
 
-**A18.** SVM stands for Support Vector Machines, and "it is arguably the most successful classification method in machine learning" (Prof. Abu-Mostafa).
+## <a name="q18"></a> Q18. What is SVM and how does it work?
+
+SVM stands for Support Vector Machines, and "it is arguably the most successful classification method in machine learning" (Prof. Abu-Mostafa).
 
 Consider the following dataset:
 
@@ -286,11 +313,11 @@ Consider the following dataset:
   - $$n$$ is small (1 - 1,000), $$m$$ is intermediate (1,000 - 10,000): Use SVM with Gaussian kernel. (seems a fairly complex dataset, better use Gaussian kernel)
   - $$n$$ is small (1 - 1,000), $$m$$ is large (50,000+): Try to add more features and use Logistic Regression or SVM without a kernel.
 
----
 
-**Q19. How does k-means clustering algorithm work?**
 
-**A19.** (From [Hastie & Tibshirani](http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Seventh%20Printing.pdf)). *K-means* clustering is a simple and elegant approach for partitioning a data set into *K* distinct, non-overlapping clusters, such that the total within-cluster variation, summed over all *K* clusters is as small as possible. The algorithm flows as follows:
+## <a name="q19"></a> Q19. How does k-means clustering algorithm work?
+
+(From [Hastie & Tibshirani](http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Seventh%20Printing.pdf)). *K-means* clustering is a simple and elegant approach for partitioning a data set into *K* distinct, non-overlapping clusters, such that the total within-cluster variation, summed over all *K* clusters is as small as possible. The algorithm flows as follows:
 
   1. Randomly assign a number, from $$1$$ to $$K$$, to each observations. These serve as initial cluster assignments for the observations.
 
@@ -305,11 +332,11 @@ Consider the following dataset:
 <img src="/images/data-science-questions/k-means.png" alt="k-means" width="500"/>
 <br>
 
----
 
-**Q20. What is the "ceiling analysis" and why is it important?**
 
-**A20.** *Ceiling analysis* is the process of identifying the weakest (and most promising) link in your machine learning pipeline which is worth to improve. Your machine learning pipeline might compose of multiple components each performing a different task. If your pipeline is performing poorly in overall, which part of the pipeline you should work on so that its performance improves?
+## <a name="q20"></a> Q20. What is the "ceiling analysis" and why is it important?
+
+*Ceiling analysis* is the process of identifying the weakest (and most promising) link in your machine learning pipeline which is worth to improve. Your machine learning pipeline might compose of multiple components each performing a different task. If your pipeline is performing poorly in overall, which part of the pipeline you should work on so that its performance improves?
 
 Let's assume that we have the following ML pipeline for a car detection application:
 
@@ -320,8 +347,17 @@ Let's assume that we have the following ML pipeline for a car detection applicat
 
 Let's assume that we want to use *ceiling analysis* to identify the bottlenecks in our system. What we do is we manually label the test set for a particular component **(background removal)**, so that that components receives 100% correct labels. Then, we check the system's performance. If there is a large increase, for instance from 80% to 90%, then it means that correctly labelling the test set at that component is very important and we should invest our time to improve that component.
 
----
 
-**Q21. What?**
 
-**A21.**
+## <a name="q21"></a> Q21. What are the different types of testing?
+
+There are 3 test classes:
+1. Unit testing
+ - validate each piece of program
+ - each function is tested separately
+2. Regression testing
+- running the unit test again after fixing bugs
+- this is to ensure that you didn't introduce new bugs
+3. Integration testing
+- test the whole system
+- make sure that interacting pieces work nicely

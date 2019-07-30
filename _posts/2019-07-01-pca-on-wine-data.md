@@ -1,15 +1,15 @@
 ---
 title: "PCA on Wine Quality Dataset"
-date: 2019-07-01 12:07:25 +0000
+date: 2019-07-01 09:00:00 +0000
 tags: [Unsupervised learning, PCA]
 excerpt: "Using the PCA to gain insight into wine quality dataset"
 category: "machine"
 classes: "wide"
 ---
 
-# Unsupervised learning (principal component analysis)
+## Unsupervised learning (principal component analysis)
 
-**Data science question: Find out which features of wine are important to determine quality.**
+**Data science problem:** Find out which features of wine are important to determine its quality.
 <br>
 
 We will use the Wine Quality Data Set for red wines created by P. Cortez et al. It has 11 variables and 1600 observations.
@@ -709,7 +709,7 @@ Note: Here, we used the training set for prediction. Ideally, we would want to u
 
 ## Resources
 
-* D. Cielen, A. Meysman, M. Ali, Introducing Data Science: Big Data Machine Learning and more using Python tools, Manning Publications.
+* D. Cielen, A. Meysman, M. Ali, Introducing Data Science: Big Data Machine Learning and more using Python tools, Manning Publications, 2016.
 * Scikit-learn: Machine Learning in Python, Pedregosa et al., JMLR 12, pp. 2825-2830, 2011.
 * P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis. Modeling wine preferences by data mining from physicochemical properties. In Decision Support Systems, Elsevier, 47(4):547-553, 2009.
 

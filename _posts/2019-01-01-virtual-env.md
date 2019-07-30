@@ -1,6 +1,6 @@
 ---
 title: "Creating a Virtual Environment"
-date: 2019-05-23
+date: 2018-11-01 09:00:00 +0000
 tags: [Virtual environment, pip]
 excerpt: "Creating a virtual environment and adding packages to eat"
 category: "blog"

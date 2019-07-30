@@ -1,6 +1,6 @@
 ---
 title: "Comparison of Two Similarity Metrics"
-date: 2019-05-23
+date: 2019-01-01 09:00:00 +0000
 tags: [R, similarity]
 excerpt: "Correlation Coefficient and Coefficient of Determination"
 category: "blog"
